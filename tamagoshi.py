@@ -9,15 +9,62 @@ class Tamagoshi():
         self.fome = fome
         self.saude = saude
         self.idade = idade
-        self.humor = saude + fome
+        self.humor = (self.saude + self.fome) / 2
 
-    #def fome(self):
+    def fomes(self):
+        self.fome = 100
+        self.humor = (self.saude + self.fome) / 2
 
-    #def saude(self):
+    def saudes(self):
+        self.saude = 100
+        self.humor = (self.saude + self.fome) / 2
 
-    #def humor(self):
-
-
+    def cansado(self):
+        self.fome = self.fome - 20
+        self.saude = self.saude - 20
+        self.humor = (self.saude + self.fome) / 2
         pass
 
+bicho = Tamagoshi("tomy", 40, 70, 13)
+print(vars(bicho))
+
+
+
+
+print("""TABELA DE OPCOES:
+      OPCAO 1: ALIMENTAR
+      OPCAO 2: BRINCAR
+      OPCAO 3: CANTAR
+      OPCAO 4: DANCAR
+      digita 0 para terminar""")
+
+
+fim = True
+cont = 0
+while fim == True :
+    opcao = int(input("escreva a opcao:"))
     
+    
+    
+        
+
+    if opcao == 1:
+        bicho.fomes()
+        print(vars(bicho))
+    elif opcao == 2:
+        bicho.saudes()
+        print(vars(bicho))
+    elif opcao == 3:
+        cont = 3
+        
+    elif opcao == 4:
+        cont = 3
+                  
+    else:
+        break
+
+
+    if cont == 3:
+        bicho.cansado()
+        print(vars(bicho))
+        cont = 0
